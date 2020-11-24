@@ -1,0 +1,9 @@
+/*RETO 3 SESIÓN 5*/
+
+[{
+    $match: {
+        amenities: {
+            $in: ["Wifi", "Ethernet connection"]
+        }
+    }
+}]

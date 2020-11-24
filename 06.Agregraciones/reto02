@@ -1,0 +1,20 @@
+RETO 2 SESIÓN 6
+
+[{$lookup: {
+  from: 'comments',
+  localField: 'email',
+  foreignField: 'email',
+  as: 'comments'
+}}, {$addFields: {
+  number_of_comments: {
+    $size: "$comments"
+  }
+}}, {$match: {
+  number_of_comments: {
+    $gte: 1
+  }
+}}, {$project: {
+  email: 1,
+  password: 1,
+  _id: 0
+}}]

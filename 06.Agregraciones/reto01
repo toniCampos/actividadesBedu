@@ -1,0 +1,26 @@
+RETO 1 SESIÓN 6
+
+[{$match: {
+  property_type: {$eq: "House"}
+}}, {$project: {
+  address: 1,
+  price: 1, 
+  bedrooms: 1,
+  _id: 0
+}}, {$match: {
+  bedrooms: {
+    $gte: 1
+  }
+}}, {$group: {
+  _id: "$address.country_code",
+  precio_total: {
+    $sum: "$price"
+  },
+  habitaciones_totales: {
+    $sum: "$bedrooms"
+  }
+}}, {$addFields: {
+  price_per_bedroom: {
+    $divide: ["$precio_total", "$habitaciones_totales"]
+  }
+}}]
