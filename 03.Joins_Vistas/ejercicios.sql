@@ -48,7 +48,6 @@ left join customers c
 order by o.customerNumber;
 
 /* 6 */
-/*pendiente*/
 select *
 from customers c
 left join orders o
@@ -74,10 +73,7 @@ right join orders o
 	on o.customerNumber = c.customerNumber
 order by o.customerNumber;
 
-/* 8.2 ejercicio 6 */
-/* pendiente */
-
-/* 8.3 ejercicio 7 */
+/* 8.2 ejercicio 7 */
 select e.lastName as employeeLastName, e.firstName as employeeFirstName, c.customerName, p.checkNumber, p.amount
 from payments p
 right join customers c
