@@ -69,9 +69,3 @@
             '$size': 50
         }
     }
-
-    # 09
-    # pendiente
-
-    # 10
-    #preguntar a partir de aqui
